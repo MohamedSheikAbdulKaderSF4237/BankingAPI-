@@ -8,7 +8,7 @@ namespace BankingAPI.Controllers
 {
     public interface IBankingOperations
         {
-           public  AccountHolderDetails ViewAllaccounts();
+           public  List<AccountHolderDetails> ViewAllaccounts();
            // void ViewBalance(int accountNumber);
             //void TransferMoney(int fromAccount, int toAccount, double amount);
         }

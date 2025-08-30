@@ -11,12 +11,26 @@ namespace BankingAPI
         public string accountHolderName { get; set; }
         public double accountBalance { get; set; }
 
+        public static List<AccountHolderDetails> accountHolderslist = new List<AccountHolderDetails>();
+
         public AccountHolderDetails(int accountNumber, string accountHolderName, double accountBalance)
             {
                 this.accountNumber = accountNumber;
                 this.accountHolderName = accountHolderName;
                 this.accountBalance = accountBalance;
             }
+        public AccountHolderDetails()
+        {
 
         }
+
+        public void AddAccountHolders()
+        {
+            accountHolderslist.Add(new AccountHolderDetails(1001, "Alice", 5000));
+            accountHolderslist.Add(new AccountHolderDetails(1002, "Bob", 3000));
+            accountHolderslist.Add(new AccountHolderDetails(1003, "Charlie", 7000));
+        }
+
+
     }
+}

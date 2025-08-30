@@ -17,23 +17,17 @@ namespace BankingAPI.Controllers
     //[ApiExplorerSettings(IgnoreApi = true)]
     public class BankingController : ControllerBase
     {
-        private readonly IBankingOperations _bankingOperations;
 
-        public static List<AccountHolderDetails> accountHolderslist = new List<AccountHolderDetails>();
+        //Dependency Injection of IBankingOperations interface
+        private readonly IBankingOperations _bankingOperations;
 
         public BankingController(IBankingOperations bankingOperations)
         {
             _bankingOperations = bankingOperations;
-            if (!accountHolderslist.Any())
-                AddAccountHolders();
+            //if (!accountHolderslist.Any())
+              //  AddAccountHolders();
         }
 
-        public void AddAccountHolders()
-        {
-            accountHolderslist.Add(new AccountHolderDetails(1001, "Alice", 5000));
-            accountHolderslist.Add(new AccountHolderDetails(1002, "Bob", 3000));
-            accountHolderslist.Add(new AccountHolderDetails(1003, "Charlie", 7000));
-        }
 
         [HttpGet("ViewAllAccountDetails")]
        // [Route("ViewAllAccountDetails")]
