@@ -12,8 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Dependency Injection of IBankingOperations interface and AccountHolderDetails class
-builder.Services.AddSingleton<IBankingOperations, BankingOperations>();
-builder.Services.AddSingleton<AccountHolderDetails>();
+builder.Services.AddScoped<IBankingOperations, BankingOperations>();
+builder.Services.AddScoped<IAccountHolderDetails, AccountHolderDetails>();
 
 var app = builder.Build();
 
